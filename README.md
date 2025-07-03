@@ -1,13 +1,7 @@
 # Precomputed-Dominant-Resource-Fairness
 
-The two Jupyter-Notebooks in this repository is aimed to demonstrate calculations in the article Precomputed Dominant Resource Fairness (PDRF).
+The files in this repository implement Precomputated Dominant Resource Fairness(PDRF), which is an algorithm to actualise Dominant Resource Fairness (DRF) allocation in fewer steps, by precomputing the DRF iterations and assigning the resulting allocations.
 
-Note that PDRF_Core_Calculator is not a full implementation of PDRF, but an implementation of the core calculation of the algorithm for proof of concept purposes.
+There are two implementations, one uses the maximum dominant share variable, and the other, by the virtue of a simplification step, does not use it. Presumably for numerical reasons, and surprisingly, the one that uses maximum dominant share returns more accurate allocations and performs better in terms of return times.
 
-The third notebook, Numerical Analysis, demonstrates the accuracy of PDRF with respect to DRF. In the tests carried out with different number of users, varying demand intervals and resource capacity intervals, from which values are drawn in random from a discrete uniform distribution, 45%-55% percent allocations deviate from the final DRF distribution, predominantly by 1 task. Overallocations constitute approximately 3% of those. If the overallocations are not tolerable, a more conservative allocation algorithm may be obtained by rounding cycle iterations down, before multiplying with the ratios. In this case, the underallocations may rise up to 100% and may be as much as 6-7 tasks, yet no overallocation is observed.
-
-The analyses also clearly demonstrate that under discrete uniform, distribution reiterating the algorithm by iteratively removing maximum dominant share demands does not contribute to the accuracy of the algorithm. All the results mentioned above are obtained from the single iteration of the algorithm.
-
-When the ratio between the demand interval and the resource capacities are high, PDRF performs better in terms of return latency.
-
-Further data will be collected for more accurate statistical demonstration.
+The Jupyter-Notebooks for numerical analysis create random data, process it wiht DRF and PDRF, and compare the differences. Python scripts are basicly same, but simplified for printing out raw data to be used in the analyses. Scripts are run 1000 times with different parameters and the data is analysed with Statistics.ipynb, which can be found under the Results folder, along with both the raw data and the tables created with them.
