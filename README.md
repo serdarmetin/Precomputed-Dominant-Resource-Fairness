@@ -1,6 +1,6 @@
 # Precomputed-Dominant-Resource-Fairness
 
-The files in this repository implement Precomputated Dominant Resource Fairness(PDRF), which is an algorithm to actualise Dominant Resource Fairness (DRF) allocation in fewer steps, by precomputing the DRF iterations and assigning the resulting allocations.
+The files in this repository implement Precomputated Dominant Resource Fairness(PDRF), which is an algorithm to approximate Dominant Resource Fairness (DRF) allocation in fewer steps, by precomputing the DRF iterations and assigning the resulting allocations.
 
 There are two implementations, one uses the maximum dominant share variable, and the other, by the virtue of a simplification step, does not use it. Presumably for numerical reasons, and surprisingly, the one that uses maximum dominant share returns more accurate allocations and performs better in terms of return times.
 
