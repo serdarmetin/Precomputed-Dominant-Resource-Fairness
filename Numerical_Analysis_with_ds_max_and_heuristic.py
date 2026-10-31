@@ -74,6 +74,6 @@ heuristic()
 
 difference = (u_drf - u_pdrf) / d
 
-print(np.count_nonzero(difference == 1, axis=0)[0], np.count_nonzero(difference == 2, axis=0)[0], np.count_nonzero(difference > 2), int(difference.max(axis=0).max()), np.sum(difference > 0, axis=0)[0], np.count_nonzero(difference == -1, axis=0)[0], np.count_nonzero(difference == -2, axis=0)[0], np.count_nonzero(difference < -2, axis=0)[0], int(np.absolute(difference.min(axis=0).min())), np.sum(difference < 0, axis=0)[0], int((c_pdrf - c_drf > 0).all()))
+print(np.count_nonzero(difference == 1, axis=0)[0], np.count_nonzero(difference == 2, axis=0)[0], np.count_nonzero(difference > 2, axis=0), int(difference.max(axis=0).max()), np.sum(difference > 0, axis=0)[0], np.count_nonzero(difference == -1, axis=0)[0], np.count_nonzero(difference == -2, axis=0)[0], np.count_nonzero(difference < -2, axis=0)[0], int(np.absolute(difference.min(axis=0).min())), np.sum(difference < 0, axis=0)[0], int((c_pdrf - c_drf > 0).all()))
 
 print(u_pdrf)
